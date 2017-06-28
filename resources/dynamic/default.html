@@ -1,0 +1,35 @@
+<div id="adc_{%= CurrentADC.InstanceId %}" class="RLTimePicker">
+{% If CurrentQuestion.Type = "datetime" Then
+
+	Dim placeholder = CurrentADC.PropValue("placeholder")
+	Dim attrPlaceholder = On(placeholder <> "", "placeholder=\"" + placeholder + "\"", "")
+	Dim attrRequired = On(CurrentQuestion.IsAllowDK, "required=\"required\"", "")
+    Dim startVal = "00:00:00"
+    
+	If Not(CurrentQuestion.IsDateOnly) Then
+    	If Not(CurrentQuestion.IsTimeOnly) Then ' Attribute is only for date or for time but not for both
+        	attrPlaceholder = ""
+        	attrRequired = ""
+    	EndIf 
+%}
+ 		<select id="hour_{%= CurrentADC.InstanceId %}" name="hour"></select>
+        <span class="timeSeparator_{%= CurrentADC.InstanceId %}"></span>
+        <select id="minutes_{%= CurrentADC.InstanceId %}" name="minutes"></select>
+        <span id="secsContainer_{%= CurrentADC.InstanceId %}">
+        	<span class="timeSeparator_{%= CurrentADC.InstanceId %}"></span>
+        	<select id="seconds_{%= CurrentADC.InstanceId %}" name="seconds"></select>
+        </span>
+        <!--<input type="text" id="time" name="time" readonly="readonly" hidden=true/> -->
+        <input id="time_{%= CurrentADC.InstanceId %}" hidden type="text" name="{%= CurrentQuestion.InputName("time")%}" />
+        <span class="imperial" {%If CurrentADC.PropValue("imperial") = "false" Then %} hidden {% EndIf %} id="ampm_{%= CurrentADC.InstanceId %}"></span>
+        <script>
+            var i = {%= CurrentADC.InstanceId %};
+            initPicker(i);
+        </script>
+
+        {%
+	EndIf
+EndIf %}
+</div>
+
+
