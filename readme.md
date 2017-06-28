@@ -1,3 +1,3 @@
 # timepicker
     
-Javascript only Datapicker
+Javascript only Datepicker
