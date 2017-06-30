@@ -8,11 +8,9 @@ var options_{%= CurrentADC.InstanceId %} = {
 
 var minHour = {%= Val(CurrentQuestion.MinDate.Format("hh")) %};
 var maxHour = {%= Val(CurrentQuestion.MaxDate.Format("hh")) %};
-console.log(minHour);
-console.log(maxHour);
 
 if (!minHour) {
-    minHour = 00;    
+    minHour = 00;
 }
 if (!maxHour) {
     maxHour = 24;
@@ -47,8 +45,10 @@ function initPicker(adcId) {
   
 
 	for (var i=minHour;i<maxHour;i++) {
-    	var val = i<10&&mil?"0"+i:i;
+    	// var val = i<10&&mil?"0"+i:i;
+        var val = i;
     	if (!mil &&  val>12) val-=12;
+        val = val<10?"0"+val:val;
     	hour.options[i]=new Option(val,i);
   	}
     
@@ -87,6 +87,12 @@ function initPicker(adcId) {
     	}
     	
     	document.getElementById("time_" + adcId).value=timeResult + ampm.innerHTML;
+        if (window.askia 
+            && window.arrLiveRoutingShortcut 
+            && window.arrLiveRoutingShortcut.length > 0
+            && window.arrLiveRoutingShortcut.indexOf('{%:= CurrentQuestion.Shortcut %}') >= 0) {
+            askia.triggerAnswer();
+            }
   	}
   	min.onchange=function() {
     	hour.onchange();
@@ -99,8 +105,13 @@ function initPicker(adcId) {
     }
     
   	var now = new Date();
-    hour.selectedIndex=now.getHours();
-    min.selectedIndex=now.getMinutes()/minsInterval;
+    hour.selectedIndex = now.getHours();
+    min.selectedIndex = now.getMinutes()/minsInterval;
+        
+    if (showSeconds){
+        sec.selectedIndex = now.getSeconds()/secsInterval;
+    }
+        
     hour.onchange();
 
 }

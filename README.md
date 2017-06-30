@@ -1,1 +1,3 @@
-# adc-Timepicker
+# timepicker
+    
+Javascript only Datepicker

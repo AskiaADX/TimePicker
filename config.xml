@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<control  xmlns="http://www.askia.com/2.0.0/ADCSchema"
+<control  xmlns="http://www.askia.com/2.1.0/ADCSchema"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://www.askia.com/2.0.0/ADCSchema https://raw.githubusercontent.com/AskiaADX/ADXSchema/2.0.0/ADCSchema.xsd"
-          version="2.0.0"
-          askiaCompat="5.3.3">
+          xsi:schemaLocation="http://www.askia.com/2.1.0/ADCSchema https://raw.githubusercontent.com/AskiaADX/ADXSchema/2.1.0/ADCSchema.xsd"
+          version="2.1.0"
+          askiaCompat="5.4.2">
   <info>
-    <name>adc2-timepicker</name>
+    <name>TimePicker</name>
     <guid>80a76bae-0376-4d86-9e6b-e1ff18621ab9</guid>
-    <version>1.0.0</version>
+    <version>2.0.0</version>
     <date>2017-03-16</date>
     <description><![CDATA[Javascript only Datapicker]]></description>
     <company>Askia</company>
@@ -17,7 +17,6 @@
     <categories>
       <category>General</category>
     </categories>
-    <style width="400" height="300" />
     <constraints>
       <constraint on="questions" single="false" multiple="false" numeric="false" date="true" open="false" chapter="false" requireParentLoop="false" />
       <constraint on="controls" responseblock="false" checkbox="false" label="false" listbox="false" radiobutton="false" textbox="true" />
@@ -37,28 +36,34 @@
   </outputs>
   <properties>
     <category id="general" name="General">
-      <property xsi:type="standardProperty" id="placeholder" name="Placeholder" type="string" mode="dynamic" require="false" visible="false">
-        <description><![CDATA[Using HTML 5, in modern browser.
-          Helper text shows in the input when it's empty.]]></description>
-        <value></value>
+      <property xsi:type="standardProperty" id="controlAlign" name="Control Alignment" type="string" mode="dynamic" require="true" visible="true">
+        <description><![CDATA[The alignment of the control]]]></description>
+        <value><![CDATA[center]]></value>
+        <options>
+          <option value="left" text="Left" />
+          <option value="center" text="Center" />
+          <option value="right" text="Right" />
+        </options>
       </property>
-      <property xsi:type="standardProperty" id="useList" name="Use a selection list" type="boolean" mode="static" require="false" visible="false">
-        <description><![CDATA[Use a select list to enumerate all available responses.
-          This option works with closed and numeric questions.
-          For numeric question, the range between bounds should be inferior than 20. It take in account the step option.]]></description>
-        <value><![CDATA[false]]></value>
-      </property>
-      <property xsi:type="standardProperty" id="bgColor" name="Background Colour" type="color" mode="dynamic" require="false" visible="true" colorFormat="rgb">
+      <property xsi:type="standardProperty" id="bgColor" name="Background colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
         <description><![CDATA[Background colour of time picker]]></description>
-        <value><![CDATA[245, 245, 245]]></value>
+        <value><![CDATA[{%= Theme.WhiteColor %}]]></value>
       </property>
-      <property xsi:type="standardProperty" id="focusColor" name="Highlight colour" type="color" mode="dynamic" require="false" visible="true" colorFormat="rgb">
+      <property xsi:type="standardProperty" id="focusColor" name="Highlight colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
         <description><![CDATA[Colour of the control when it's in focus]]></description>
-        <value><![CDATA[255, 128, 0]]></value>
+        <value><![CDATA[{%= Theme.SecondaryColor %}]]></value>
       </property>
-      <property xsi:type="standardProperty" id="fontColor" name="font color" type="color" mode="static" require="false" visible="true" colorFormat="rgb">
+      <property xsi:type="standardProperty" id="fontColor" name="Font color" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
         <description><![CDATA[sets the color for the fonts]]></description>
-        <value><![CDATA[0, 0, 0]]></value>
+        <value><![CDATA[{%= Theme.BlackColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="borderColor" name="Border color" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
+        <description><![CDATA[The color of the border]]></description>
+        <value><![CDATA[{%= Theme.NeutralDarkColor %}]]></value>
+      </property>
+      <property xsi:type="standardProperty" id="borderRadius" name="Border radius" type="string" mode="dynamic" require="true" visible="false">
+        <description><![CDATA[The border radius]]></description>
+        <value><![CDATA[{%= Theme.BorderRadius %}]]></value>
       </property>
     </category>
     <category id="timePickerOptions" name="Time Picker">

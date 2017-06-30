@@ -1,53 +1,49 @@
-#adc_{%= CurrentADC.InstanceId %} select {
-   /*background: ;*/
-   border: none;
-   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-   font-size: 18px;
-   height: 29px;
-   padding: 5px;
-   width: 80px;
-   /*border: 1px solid #ccc;*/
-   height: 34px;
-   width: 80px;
-   text-align:center;
-}
-#adc_{%= CurrentADC.InstanceId %} #time_{%= CurrentADC.InstanceId %} {
-   width:70px;
-   border:0;
-   text-align:right;
+{%
+Dim controlAlign
+If (CurrentADC.PropValue("controlAlign") = "center" ) Then
+    controlAlign = "0 auto"
+ElseIf (CurrentADC.PropValue("controlAlign") = "right" ) Then
+    controlAlign = "0 0 0 auto"
+Else
+    controlAlign = "0 auto 0 0"
+EndIf
+
+Dim timeFormat = CurrentADC.PropValue("imperial")
+Dim showSeconds = CurrentADC.PropValue("showSeconds")
+Dim maxWidth
+If (timeFormat = "true" and showSeconds = "true") Then
+    maxWidth = "240px"
+ElseIf (timeFormat = "true" and showSeconds = "false") Then
+    maxWidth = "170px"
+ElseIf (timeFormat = "false" and showSeconds = "true") Then
+    maxWidth = "200px"
+ElseIf (timeFormat = "false" and showSeconds = "false") Then
+    maxWidth = "130px"
+EndIf
+
+%}
+#adc_{%= CurrentADC.InstanceId %} {
+   width: 100%;
+   max-width: {%= maxWidth %};
+   margin: {%= controlAlign %};
+   border-radius: {%= CurrentADC.PropValue("borderRadius") %};
+   border: 1px solid rgb({%= CurrentADC.PropValue("borderColor") %});
 }
 
-#adc_{%= CurrentADC.InstanceId %} .timeSeparator {
-  width: 10px;
-  height: 29px;
-  padding: 5px;
-  font-size: 100px;
-  font-weight: bolder;
-}
-
-#adc_{%= CurrentADC.InstanceId %} #secsContainer {
-  display:inline;
-  height: 29px;
-}
-
+#adc_{%= CurrentADC.InstanceId %},
 #adc_{%= CurrentADC.InstanceId %} select option {
-  background: rgb({%= CurrentADC.PropValue("bgColor") %}); 
+  background-color: rgb({%= CurrentADC.PropValue("bgColor") %}); 
   color:  rgb({%= CurrentADC.PropValue("fontColor") %});
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  text-align: center;
+} 
+#adc_{%= CurrentADC.InstanceId %} select {
+  color:  rgb({%= CurrentADC.PropValue("fontColor") %});
 } 
 
 #adc_{%= CurrentADC.InstanceId %} select option:hover {
-  color: #000; 
   background-color: rgb({%= CurrentADC.PropValue("focusColor") %});
+  color:  rgb({%= CurrentADC.PropValue("fontColor") %});
 }
-
-#adc_{%= CurrentADC.InstanceId %} .imperial {
-  padding: 5px;
-  font-size: 18px;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-.RLTimePicker select:focus {
+#adc_{%= CurrentADC.InstanceId %} select:focus {
   border-bottom-color: rgb({%= CurrentADC.PropValue("focusColor") %});
   outline: none;
 }

@@ -1,16 +1,6 @@
 <div id="adc_{%= CurrentADC.InstanceId %}" class="RLTimePicker">
 {% If CurrentQuestion.Type = "datetime" Then
-
-	Dim placeholder = CurrentADC.PropValue("placeholder")
-	Dim attrPlaceholder = On(placeholder <> "", "placeholder=\"" + placeholder + "\"", "")
-	Dim attrRequired = On(CurrentQuestion.IsAllowDK, "required=\"required\"", "")
     Dim startVal = "00:00:00"
-    
-	If Not(CurrentQuestion.IsDateOnly) Then
-    	If Not(CurrentQuestion.IsTimeOnly) Then ' Attribute is only for date or for time but not for both
-        	attrPlaceholder = ""
-        	attrRequired = ""
-    	EndIf 
 %}
  		<select id="hour_{%= CurrentADC.InstanceId %}" name="hour"></select>
         <span class="timeSeparator_{%= CurrentADC.InstanceId %}"></span>
@@ -28,7 +18,6 @@
         </script>
 
         {%
-	EndIf
 EndIf %}
 </div>
 
