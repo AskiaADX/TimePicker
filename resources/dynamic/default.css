@@ -32,7 +32,7 @@ EndIf
 
 #adc_{%= CurrentADC.InstanceId %},
 #adc_{%= CurrentADC.InstanceId %} select option {
-  background-color: rgb({%= CurrentADC.PropValue("bgColor") %}); 
+  background-color: rgb({%= CurrentADC.PropValue("bgColor") %});
   color:  rgb({%= CurrentADC.PropValue("fontColor") %});
 } 
 #adc_{%= CurrentADC.InstanceId %} select {

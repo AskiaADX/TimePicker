@@ -28,10 +28,9 @@
       <description><![CDATA[Default output]]></description>
       <content fileName="default.css" type="css" mode="dynamic" position="head" />
       <content fileName="default.html" type="html" mode="dynamic" position="placeholder" />
-      <content fileName="default.js" type="javascript" mode="dynamic" position="head" />
-      <content fileName="timePicker.js" type="javascript" mode="static" position="head" />
       <content fileName="timePicker.css" type="css" mode="static" position="head" />
-      <content fileName="rocketHelpers.js" type="javascript" mode="static" position="head" />
+      <content fileName="standard.js" type="javascript" mode="static" position="foot" />
+      <content fileName="initializer.js" type="javascript" mode="dynamic" position="foot" />
     </output>
   </outputs>
   <properties>
