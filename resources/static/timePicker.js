@@ -88,7 +88,7 @@
         hour.onchange=function() {
             var timeResult = "";
             if (!mil) {
-                ampm.innerHTML=(hour.selectedIndex)<12?"am":"pm";
+                ampm.innerHTML=(hour.selectedIndex)<13?"am":"pm";
             }
             var hourVal = hour.options[hour.selectedIndex].text;
             if(ampm.innerHTML == "pm") hourVal = parseInt(hourVal) + 12;
