@@ -1,3 +1,0 @@
-# timepicker
-    
-Javascript only Datapicker

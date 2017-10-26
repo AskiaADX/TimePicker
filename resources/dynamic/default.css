@@ -1,37 +1,14 @@
-#adc_{%= CurrentADC.InstanceId %} select {
-   background: {%= CurrentADC.PropValue("bgColor") %};
-   padding: 5px;
-   border: 1px solid #ccc;
-   border-radius: 5px;
-   font-size: 16px;
-   height: 34px;
-   width: 80px;
+{%
+Dim controlAlign
+If (CurrentADC.PropValue("controlAlign") = "center" ) Then
+    controlAlign = "0 auto 10px auto"
+ElseIf (CurrentADC.PropValue("controlAlign") = "right" ) Then
+    controlAlign = "0 0 10px auto"
+Else
+    controlAlign = "0 auto 10px 0"
+EndIf
+%}
+#adc_{%= CurrentADC.InstanceId %} {
+    margin: {%= controlAlign %};
+    background-color: rgba(255,255,255,1) !important;
 }
-#time_{%= CurrentADC.InstanceId %} { width:70px; border:0; text-align:right}
-#adc_{%= CurrentADC.InstanceId %} select {text-align:right}
-#adc_{%= CurrentADC.InstanceId %} .timeSeparator {
-    font-family: 'UniqueRegular';
-    width: 10px;
-    padding: 5px;
-    font-size: 20px;
-}
-
-#secsContainer_{%= CurrentADC.InstanceId %} {display:inline;}
-#ampm_{%= CurrentADC.InstanceId %} {
-    display:inline-block;
-    padding: 5px;
-    font-size: 16px;
-    height: 34px;
-}
-
-#adc_{%= CurrentADC.InstanceId %} select option {
-  background: {%= CurrentADC.PropValue("focusColor") %}; 
-  color: {%= CurrentADC.PropValue("fontColor") %}; 
-  box-shadow: inset 20px 20px #f00
-} 
-
-#adc_{%= CurrentADC.InstanceId %} select option:hover {
-  color: #000; 
-  box-shadow: inset 20px 20px #00f;
-}
-
