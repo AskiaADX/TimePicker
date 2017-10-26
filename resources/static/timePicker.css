@@ -1,55 +1,50 @@
-.RLTimePicker {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: block;
-}
-.RLTimePicker .show {
-    display: block;
-}
-.RLTimePicker select {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 0;
-    background: transparent;
-    border: none;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 18px;
-    padding: 5px;
-    height: 34px;
-    width: 55px;
-    text-align: center;
-    text-align-last: center;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    cursor: pointer;
-}
-.RLTimePicker select option {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    text-align: center;
-    cursor: pointer;    
-}
+/* line 17, ../sass/timePicker.scss */
 
-.RLTimePicker select:focus {
-    border-bottom-color: #ace;
-    outline: none;
-}
-.RLTimePicker .imperial {
-    width: 45px;
-    padding: 5px;
-    font-size: 18px;
+.RLTimePicker {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: inline-block;
+  border-radius: 3px;
+  border: 1px solid #dddddd;
+  background: white; }
+  /* line 25, ../sass/timePicker.scss */
+  .RLTimePicker.show {
+    display: block; }
+  /* line 29, ../sass/timePicker.scss */
+  .RLTimePicker input {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-.RLTimePicker .timeSeparator {
-    width: 5px;
-    height: 34px;
-    padding: 1px;
-    font-size: 100px;
-    font-weight: bolder;
-}
-.RLTimePicker #secsContainer {
-    display:inline;
-    height: 34px;
-}
+    width: 38px;
+    padding: 8px 8px 6px;
+    margin: 0;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    border-bottom: 2px solid white;
+    background: transparent; }
+    /* line 41, ../sass/timePicker.scss */
+    .RLTimePicker input:focus {
+      border-bottom-color: #ace;
+      outline: none; }
+    /* line 46, ../sass/timePicker.scss */
+    .RLTimePicker input.imperial {
+      width: 45px; }
+  /* line 51, ../sass/timePicker.scss 
+  .RLTimePicker:after, .RLTimePicker:before {
+    top: -20px;
+    left: 15px;
+    border: 10px solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom: 10px #fff solid; }*/
+  /* line 62, ../sass/timePicker.scss
+  .RLTimePicker:before {
+    border-bottom: 10px #ddd solid;
+    width: 2px;
+    margin-left: -1px; } */
