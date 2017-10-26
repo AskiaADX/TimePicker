@@ -1,3 +1,6 @@
+{%
+Dim TimeInputCode = CurrentQuestion.InputName("Time").Replace("T","")
+%}
 <div id="adc_{%= CurrentADC.InstanceId %}" class="RLTimePicker">
 {% If CurrentQuestion.Type = "datetime" Then%}
  		<select id="hour_{%= CurrentADC.InstanceId %}" name="hour"></select>
@@ -8,7 +11,7 @@
         	<select id="seconds_{%= CurrentADC.InstanceId %}" name="seconds"></select>
         </span>
         <!--<input type="text" id="time" name="time" readonly="readonly" hidden=true/> -->
-    	<input id="time_{%= CurrentADC.InstanceId %}" class="askia-question-{%= CurrentQuestion.InputCode %}" hidden type="text" name="{%= CurrentQuestion.InputName("time")%}" />
+    	<input id="time_{%= CurrentADC.InstanceId %}" class="askia-question-{%= TimeInputCode %}" hidden type="text" name="{%= CurrentQuestion.InputName("time")%}" />
         <span class="imperial" {%If CurrentADC.PropValue("imperial") = "false" Then %} hidden {% EndIf %} id="ampm_{%= CurrentADC.InstanceId %}"></span>
         {%
 EndIf %}

@@ -1,49 +1,21 @@
 {%
 Dim controlAlign
 If (CurrentADC.PropValue("controlAlign") = "center" ) Then
-    controlAlign = "0 auto"
+    controlAlign = "0 auto 10px auto"
 ElseIf (CurrentADC.PropValue("controlAlign") = "right" ) Then
-    controlAlign = "0 0 0 auto"
+    controlAlign = "0 0 10px auto"
 Else
-    controlAlign = "0 auto 0 0"
+    controlAlign = "0 auto 10px 0"
 EndIf
-
-Dim timeFormat = CurrentADC.PropValue("imperial")
-Dim showSeconds = CurrentADC.PropValue("showSeconds")
-Dim maxWidth
-If (timeFormat = "true" and showSeconds = "true") Then
-    maxWidth = "240px"
-ElseIf (timeFormat = "true" and showSeconds = "false") Then
-    maxWidth = "170px"
-ElseIf (timeFormat = "false" and showSeconds = "true") Then
-    maxWidth = "200px"
-ElseIf (timeFormat = "false" and showSeconds = "false") Then
-    maxWidth = "130px"
-EndIf
-
 %}
 #adc_{%= CurrentADC.InstanceId %} {
-   width: 100%;
-   max-width: {%= maxWidth %};
-   margin: {%= controlAlign %};
-   border-radius: {%= CurrentADC.PropValue("borderRadius") %};
-   border: 1px solid rgb({%= CurrentADC.PropValue("borderColor") %});
+    margin: {%= controlAlign %};
+    background-color: rgba({%= Theme.WhiteColor %}) !important;
 }
-
-#adc_{%= CurrentADC.InstanceId %},
-#adc_{%= CurrentADC.InstanceId %} select option {
-  background-color: rgb({%= CurrentADC.PropValue("bgColor") %});
-  color:  rgb({%= CurrentADC.PropValue("fontColor") %});
-} 
 #adc_{%= CurrentADC.InstanceId %} select {
-  color:  rgb({%= CurrentADC.PropValue("fontColor") %});
-} 
-
-#adc_{%= CurrentADC.InstanceId %} select option:hover {
-  background-color: rgb({%= CurrentADC.PropValue("focusColor") %});
-  color:  rgb({%= CurrentADC.PropValue("fontColor") %});
+    color: rgba({%= Theme.BlackColor %}) !important;
 }
-#adc_{%= CurrentADC.InstanceId %} select:focus {
-  border-bottom-color: rgb({%= CurrentADC.PropValue("focusColor") %});
-  outline: none;
+#adc_{%= CurrentADC.InstanceId %} option {
+    color: rgba({%= Theme.BlackColor %}) !important;
+    background-color: rgba({%= Theme.WhiteColor %}) !important;
 }

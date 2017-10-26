@@ -7,7 +7,7 @@
   <info>
     <name>TimePicker</name>
     <guid>80a76bae-0376-4d86-9e6b-e1ff18621ab9</guid>
-    <version>2.0.0</version>
+    <version>2.0.1</version>
     <date>2017-03-16</date>
     <description><![CDATA[Javascript only Datapicker]]></description>
     <company>Askia</company>
@@ -26,11 +26,12 @@
   <outputs defaultOutput="default">
     <output id="default">
       <description><![CDATA[Default output]]></description>
+      <content fileName="timePicker.css" type="css" mode="static" position="head" />
       <content fileName="default.css" type="css" mode="dynamic" position="head" />
       <content fileName="default.html" type="html" mode="dynamic" position="placeholder" />
-      <content fileName="timePicker.css" type="css" mode="static" position="head" />
-      <content fileName="standard.js" type="javascript" mode="static" position="foot" />
-      <content fileName="initializer.js" type="javascript" mode="dynamic" position="foot" />
+      <content fileName="rocketHelpers.js" type="javascript" mode="static" position="head" />
+      <content fileName="timePicker.js" type="javascript" mode="static" position="foot" />
+      <content fileName="default.js" type="javascript" mode="dynamic" position="foot" />
     </output>
   </outputs>
   <properties>
@@ -44,26 +45,6 @@
           <option value="right" text="Right" />
         </options>
       </property>
-      <property xsi:type="standardProperty" id="bgColor" name="Background colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
-        <description><![CDATA[Background colour of time picker]]></description>
-        <value><![CDATA[{%= Theme.WhiteColor %}]]></value>
-      </property>
-      <property xsi:type="standardProperty" id="focusColor" name="Highlight colour" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
-        <description><![CDATA[Colour of the control when it's in focus]]></description>
-        <value><![CDATA[{%= Theme.SecondaryColor %}]]></value>
-      </property>
-      <property xsi:type="standardProperty" id="fontColor" name="Font color" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
-        <description><![CDATA[sets the color for the fonts]]></description>
-        <value><![CDATA[{%= Theme.BlackColor %}]]></value>
-      </property>
-      <property xsi:type="standardProperty" id="borderColor" name="Border color" type="color" mode="dynamic" require="true" visible="false" colorFormat="rgb">
-        <description><![CDATA[The color of the border]]></description>
-        <value><![CDATA[{%= Theme.NeutralDarkColor %}]]></value>
-      </property>
-      <property xsi:type="standardProperty" id="borderRadius" name="Border radius" type="string" mode="dynamic" require="true" visible="false">
-        <description><![CDATA[The border radius]]></description>
-        <value><![CDATA[{%= Theme.BorderRadius %}]]></value>
-      </property>
     </category>
     <category id="timePickerOptions" name="Time Picker">
       <property xsi:type="standardProperty" id="imperial" name="Time format" type="string" mode="dynamic" require="false" visible="true">
@@ -74,7 +55,7 @@
           <option value="true" text="12 Hour clock" />
         </options>
       </property>
-      <property xsi:type="standardProperty" id="showSeconds" name="Show Seconds" type="string" mode="dynamic" require="false" visible="true">
+      <property xsi:type="standardProperty" id="showSeconds" name="Show Seconds" type="boolean" mode="dynamic" require="false" visible="true">
         <description><![CDATA[Option to show/hide seconds counter]]></description>
         <value><![CDATA[false]]></value>
         <options>

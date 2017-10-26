@@ -1,8 +1,11 @@
+/* TIME PICKER */
 .RLTimePicker {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    display: block;
+    display: table;
+    border: 0.0625em solid rgba(221,221,221,1);
+	border-radius: 0.1875em;
 }
 .RLTimePicker .show {
     display: block;
@@ -14,11 +17,9 @@
     margin: 0;
     background: transparent;
     border: none;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 18px;
     padding: 5px;
     height: 34px;
-    width: 55px;
+    /* width: 60px; */
     text-align: center;
     text-align-last: center;
     -webkit-appearance: none;
@@ -39,8 +40,10 @@
 .RLTimePicker .imperial {
     width: 45px;
     padding: 5px;
-    font-size: 18px;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 .RLTimePicker .timeSeparator {
     width: 5px;
