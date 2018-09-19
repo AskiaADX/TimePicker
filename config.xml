@@ -7,10 +7,11 @@
   <info>
     <name>TimePicker</name>
     <guid>80a76bae-0376-4d86-9e6b-e1ff18621ab9</guid>
-    <version>2.0.1</version>
+    <version>2.0.3</version>
     <date>2017-03-16</date>
     <description><![CDATA[Javascript only Datapicker
-		v2.0.2 - Added aria-labels to select and inputs]]></description>
+		v2.0.2 - Added aria-labels to select and inputs
+		v2.0.3 - Bugfixes, changed alignment default to Left]]></description>
     <company>Askia</company>
     <author><![CDATA[Jatin Bhatt <jatin@askia.com>]]></author>
     <site>www.askia.com</site>
@@ -39,7 +40,7 @@
     <category id="general" name="General">
       <property xsi:type="standardProperty" id="controlAlign" name="Control Alignment" type="string" mode="dynamic" require="true" visible="true">
         <description><![CDATA[The alignment of the control]]]></description>
-        <value><![CDATA[center]]></value>
+        <value><![CDATA[left]]></value>
         <options>
           <option value="left" text="Left" />
           <option value="center" text="Center" />
@@ -56,7 +57,7 @@
           <option value="true" text="12 Hour clock" />
         </options>
       </property>
-      <property xsi:type="standardProperty" id="showSeconds" name="Show Seconds" type="boolean" mode="dynamic" require="false" visible="true">
+      <property xsi:type="standardProperty" id="showSeconds" name="Show Seconds" type="string" mode="dynamic" require="false" visible="true">
         <description><![CDATA[Option to show/hide seconds counter]]></description>
         <value><![CDATA[false]]></value>
         <options>
