@@ -7,7 +7,7 @@
   <info>
     <name>TimePicker</name>
     <guid>80a76bae-0376-4d86-9e6b-e1ff18621ab9</guid>
-    <version>2.0.3</version>
+    <version>3.0.0</version>
     <date>2017-03-16</date>
     <description><![CDATA[Javascript only Datapicker
 		v2.0.2 - Added aria-labels to select and inputs
@@ -20,7 +20,7 @@
       <category>General</category>
     </categories>
     <constraints>
-      <constraint on="questions" single="false" multiple="false" numeric="false" date="true" open="false" chapter="false" requireParentLoop="false" />
+      <constraint on="questions" single="false" multiple="false" numeric="false" date="true" open="false" chapter="false" requireParentLoop="false" RequireLoopDepth="false" />
       <constraint on="controls" responseblock="false" checkbox="false" label="false" listbox="false" radiobutton="false" textbox="true" />
       <constraint on="responses" max="*" min="*" />
     </constraints>
