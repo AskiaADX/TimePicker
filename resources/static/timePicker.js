@@ -19,7 +19,7 @@
         if (!maxHour) {
             maxHour = 24;
         }
-		
+
         var mil = !options.imperial; // use am/pm
         var timeSep = ":";
         var showSeconds = options.showSeconds;
@@ -57,7 +57,7 @@
             val = val<10?"0"+val:val;
             var opt = new Option(val,i);
             if (i < minHour || i > maxHour) {
-            	opt.setAttribute("disabled","disabled");    
+            	opt.setAttribute("disabled","disabled");
             }
             hour.options[i+1]=opt;
         }
@@ -90,8 +90,8 @@
             if (!mil) {
                 ampm.innerHTML=(hour.selectedIndex)<13?"am":"pm";
             }
-            var hourVal = hour.options[hour.selectedIndex].text;
-            if(ampm.innerHTML == "pm") hourVal = parseInt(hourVal) + 12;
+            var hourVal = hour.options[hour.selectedIndex].value;
+            //if(ampm.innerHTML == "pm") hourVal = parseInt(hourVal) + 12;
             var minsVal = min.options[min.selectedIndex].text;
             if(showSeconds) {var secsVal = sec.options[sec.selectedIndex].text}
             if (showSeconds && hourVal != "hh" && minsVal != "mm" && secsVal != "ss") {
@@ -100,8 +100,8 @@
                 timeResult = hourVal+":"+minsVal;
             }
             document.querySelector("#time_" + adcId).value=timeResult;
-            if (window.askia 
-                && window.arrLiveRoutingShortcut 
+            if (window.askia
+                && window.arrLiveRoutingShortcut
                 && window.arrLiveRoutingShortcut.length > 0
                 && window.arrLiveRoutingShortcut.indexOf(options.question) >= 0) {
                 askia.triggerAnswer();
@@ -123,7 +123,7 @@
 
         hour.onchange();
     }
-    
+
     window.TimePicker = TimePicker;
 
  }());
