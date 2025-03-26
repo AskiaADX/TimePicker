@@ -5,8 +5,12 @@
         stepSeconds: {%=CurrentADC.PropValue("stepSeconds")%},
         imperial: {%=CurrentADC.PropValue("imperial")%},
         hideInput: true,
-        minHour: {%= Hour(CurrentQuestion.MinDate) %},
-        maxHour: {%= Hour(CurrentQuestion.MaxDate) %},
+        minHour: {%= 
+        dim tm1 = CurrentQuestion.MinDate 
+        cvdkna(tm1.Hour,-2) %},
+        maxHour: {%= 
+        dim tm2 = CurrentQuestion.MaxDate 
+        cvdkna(tm2.Hour,-2) %},
         selected_hour: "{%= Hour(CurrentQuestion) %}",
         selected_min: "{%= Minute(CurrentQuestion) %}",
         selected_sec: "{%= Second(CurrentQuestion) %}",
