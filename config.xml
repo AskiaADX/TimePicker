@@ -7,11 +7,9 @@
   <info>
     <name>TimePicker</name>
     <guid>80a76bae-0376-4d86-9e6b-e1ff18621ab9</guid>
-    <version>3.0.1</version>
-    <date>2020-08-18</date>
-    <description><![CDATA[Javascript only Datapicker
-		v2.0.2 - Added aria-labels to select and inputs
-		v2.0.3 - Bugfixes, changed alignment default to Left]]></description>
+    <version>3.0.2</version>
+    <date>2025-03-28</date>
+    <description><![CDATA[Javascript only Datapicker]]></description>
     <company>Askia</company>
     <author><![CDATA[Jatin Bhatt <jatin@askia.com>]]></author>
     <site>www.askia.com</site>
